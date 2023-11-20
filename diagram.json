@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Luana Theodoro",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-ntc-temperature-sensor", "id": "ntc1", "top": 41, "left": -183, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 34.8, "left": 128.6, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ntc1:GND", "esp:GND.1", "black", [ "h28.8", "v86.4" ] ],
+    [ "ntc1:VCC", "esp:3V3", "red", [ "h28.8", "v-48" ] ],
+    [ "led1:C", "esp:GND.3", "green", [ "v0" ] ],
+    [ "led1:A", "esp:17", "green", [ "v0" ] ],
+    [ "ntc1:OUT", "esp:32", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
